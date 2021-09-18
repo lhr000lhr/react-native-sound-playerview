@@ -12,7 +12,7 @@ const img_playjumpright = require('./resources/ui_playjumpright.png');
 export default class PlayerScreen extends React.Component{
 
     static navigationOptions = props => ({
-        title:props.navigation.state.params.title,
+        title:props.route.params.title,
     })
 
     constructor(){
@@ -64,10 +64,10 @@ export default class PlayerScreen extends React.Component{
             this.sound.play(this.playComplete);
             this.setState({playState:'playing'});
         }else{
-            const filepath = this.props.navigation.state.params.filepath;
+            const filepath = this.props.route.params.filepath;
             var dirpath = '';
-            if (this.props.navigation.state.params.dirpath) {
-                dirpath = this.props.navigation.state.params.dirpath;
+            if (this.props.route.params.dirpath) {
+                dirpath = this.props.route.params.dirpath;
             }
             console.log('[Play]', filepath);
     
